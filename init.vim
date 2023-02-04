@@ -58,6 +58,10 @@ call plug#begin(stdpath('config').'/plugged')
       \ 'branch': 'main'
     \ }
 
+"Rust setup
+  Plug 'rust-lang/rust.vim'
+  Plug 'dense-analysis/ale'
+  
 " Code syntax highlight
   Plug 'yuezk/vim-js'                           " Javascript
   Plug 'MaxMEllon/vim-jsx-pretty'               " JSX/React
