@@ -1,9 +1,9 @@
 :set number
 :set autoindent
-:set tabstop=4
-:set shiftwidth=4
+:set tabstop=8
+:set shiftwidth=8
 :set smarttab
-:set softtabstop=4
+:set softtabstop=8
 :set mouse=a
 :set wrap!
 
@@ -19,7 +19,8 @@ au! BufNewFile,BufRead *.json set foldmethod=indent " Change foldmethod for spec
 
 call plug#begin(stdpath('config').'/plugged')
 " Theme
-  Plug 'joshdick/onedark.vim',                  " Dark theme
+  "Plug 'joshdick/onedark.vim',                  " Dark theme
+  Plug 'NLKNguyen/papercolor-theme'
 
 " File browser
   Plug 'preservim/nerdTree'                     " File browser
@@ -45,6 +46,7 @@ call plug#begin(stdpath('config').'/plugged')
   Plug 'neoclide/coc.nvim',
     \ {'branch': 'release'}                     " Language server protocol (LSP)
   Plug 'pappasam/coc-jedi',                     " Jedi language server
+  Plug 'clangd/coc-clangd',
   Plug 'jiangmiao/auto-pairs'                   " Parenthesis auto
   Plug 'alvan/vim-closetag'
   Plug 'mattn/emmet-vim'
@@ -58,12 +60,7 @@ call plug#begin(stdpath('config').'/plugged')
       \ 'branch': 'main'
     \ }
 
-"Rust setup
-  Plug 'rust-lang/rust.vim'
-  Plug 'dense-analysis/ale'
-  
 " Code syntax highlight
-  Plug 'yuezk/vim-js'                           " Javascript
   Plug 'MaxMEllon/vim-jsx-pretty'               " JSX/React
   Plug 'jackguo380/vim-lsp-cxx-highlight'       " C/C++
   Plug 'uiiaoo/java-syntax.vim'                 " Java
@@ -82,7 +79,8 @@ call plug#end()
 " => Plugin Setting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set theme
-colorscheme onedark
+set background=dark
+colorscheme PaperColor
 autocmd BufNew,BufRead *.asm set ft=nasm
 
 nnoremap <C-f> :NERDTreeFocus<CR>
